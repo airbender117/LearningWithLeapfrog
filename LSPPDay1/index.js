@@ -2,7 +2,7 @@ const https = require("https");
 
 function fetchBitcoinPrice() {
   const url =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&x_cg_demo_api_key=CG-Yf1yKRniyq7g6wWo4gqbEufd";
+    "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,01coin&vs_currencies=usd";
 
   https
     .get(url, (res) => {
@@ -15,8 +15,8 @@ function fetchBitcoinPrice() {
       res.on("end", () => {
         try {
           const json = JSON.parse(data);
-          const btc = json[0];
-          console.log("Bitcoin Market Data:\n", btc.current_price);
+          //   const btc = json[0];
+          console.log("Bitcoin Market Data:\n", json);
         } catch (err) {
           console.error("Error parsing response:", err.message);
         }
