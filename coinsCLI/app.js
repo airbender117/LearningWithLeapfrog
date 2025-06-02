@@ -36,10 +36,11 @@ axios
     // console.log(prices);
 
     for (const coin in prices) {
-      console.log(`${coin}:  ${prices[coin].usd} USD`);
-    }
-    for (const coin in prices) {
-      console.log(`${coin}:  ${prices[coin].aud} AUD`);
+      console.log(
+        `${coin.toUpperCase()}:  ${prices[coin].usd} USD, ${
+          prices[coin].aud
+        } AUD`
+      );
     }
   })
   .catch(function (err) {
