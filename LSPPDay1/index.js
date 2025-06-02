@@ -1,8 +1,9 @@
+const { default: axios } = require("axios");
 const https = require("https");
 
 function fetchPrice() {
   const url =
-    "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,01coin&vs_currencies=usd";
+    "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,01coin,dogecoin,litecoin,ripple&vs_currencies=usd";
 
   https.get(url, (res) => {
     let data = "";
