@@ -4,7 +4,7 @@ import { hideBin } from "yargs/helpers";
 import axios from "axios";
 
 const argv = yargs(hideBin(process.argv))
-  .usage("Usage: node app.js --coins=bitcoin,ethereum,01coin")
+  .usage("Usage: coins --coins=bitcoin,ethereum,01coin --currencies=usd,aud,btc")
   .option("coins", {
     alias: "c",
     describe: "Comma separated list of coin IDs",
@@ -13,7 +13,7 @@ const argv = yargs(hideBin(process.argv))
     default: "bitcoin,ethereum",
   })
   .option("currencies", {
-    alias: "vs",
+    alias: "v",
     describe: "Comma separated list of currency IDs",
     type: "string",
     demandOption: false,
@@ -34,9 +34,9 @@ const currencies = argv.currencies;
 const refreshIntervals = argv.refresh * 1000;
 // const args = process.argv.slice(2);
 // const coins = args.length ? args.join(",") : "bitcoin,01coin";
-console.clear();
-console.log("Shitting in my pants...");
-console.log(`Last updated: ${new Date().toLocaleTimeString()}`);
+//console.clear();
+//console.log("Shitting in my pants...");
+//console.log(`Last updated: ${new Date().toLocaleTimeString()}`);
 
 function fetchPrices() {
   axios
