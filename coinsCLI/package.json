@@ -14,7 +14,7 @@
     "axios": "^1.9.0",
     "yargs": "^18.0.0"
   },
-  "bin": {
-    "coins": "./app.js"
+  "devDependencies": {
+    "@types/node": "^22.15.29"
   }
 }

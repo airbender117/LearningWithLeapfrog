@@ -10,6 +10,8 @@
 Here i am trying to create a CLI tool such that it helps me learn about fetching APIs
 I implemented yargs and axios till now which is used for taking arguments through terminal and for fetching apis respectively
 Thinking to using something that helps me persistently get the data
+Got know about process.stdin/out
+How to hold the terminal persistently
 
 ### Lets see
 
