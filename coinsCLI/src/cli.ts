@@ -5,6 +5,7 @@ export interface CLIArgs {
   coins: string;
   currencies: string;
   refresh: number;
+  chart:string;
 }
 
 const argv = yargs(hideBin(process.argv))
@@ -29,7 +30,13 @@ const argv = yargs(hideBin(process.argv))
     alias: "r",
     describe: "Refresh interval in seconds",
     type: "number",
-    default: 10,
+    default: 20,
+  })
+  .option("chart",{
+    alias:"c",
+    describe:'Plot price history for a coin',
+    type:'string',
+    default:'usd',
   })
   .help()
   .alias("help", "h").argv;

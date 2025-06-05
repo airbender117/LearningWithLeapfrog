@@ -2,6 +2,7 @@
 import fetchPrices from "./fetchPrices.js";
 import argv from "./cli.js";
 import startCountdown from "./countdown.js";
+import harryPlotter from "./plot.js"
 const refreshInterval: number = argv.refresh;
 const coins: string = argv.coins;
 const currencies: string = argv.currencies;
@@ -31,6 +32,7 @@ async function render(): Promise<void> {
         .join(" | ");
 
       console.log(`${coin.toUpperCase()}:  ${values}`);
+      
     }
     startCountdown(refreshInterval - 1);
   } catch (err: unknown) {
@@ -42,5 +44,5 @@ async function render(): Promise<void> {
   }
 }
 render();
-
+harryPlotter()
 setInterval(render, refreshInterval * 1000);
